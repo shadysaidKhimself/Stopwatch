@@ -122,7 +122,7 @@ body {
 }
 
 .countdown-display {
-  font-size: clamp(48px, 15vw, 240px);
+  font-size: clamp(48px, 11vw, 240px);
   font-weight: 200;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.05em;
