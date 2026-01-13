@@ -124,7 +124,7 @@ function App() {
               key="times-up"
               initial={{ opacity: 0, scale: 1.1 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="countdown-display"
+              className="countdown-display status-text"
               style={{ color: '#ffffff' }}
             >
               TIMES UP!
