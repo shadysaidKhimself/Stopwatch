@@ -112,7 +112,6 @@ body {
   width: 100%;
   padding: 0 20px;
   box-sizing: border-box;
-  margin-top: 20px;
 }
 
 .pickers-group {
@@ -210,8 +209,8 @@ body {
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .app-container {
-    justify-content: flex-start;
-    padding-top: 60px;
+    justify-content: center;
+    padding-top: 0;
   }
 
   .current-time-display {
@@ -243,7 +242,8 @@ body {
 
 @media (max-height: 700px) {
   .app-container {
-    padding-top: 40px;
+    justify-content: center;
+    padding-top: 0;
   }
   
   .timer-section {
