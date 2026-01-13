@@ -114,6 +114,15 @@ body {
   box-sizing: border-box;
 }
 
+.display-area {
+  min-height: clamp(220px, 35vh, 300px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
 .pickers-group {
   display: flex;
   gap: 20px;
@@ -141,6 +150,9 @@ body {
 .controls-group {
   display: flex;
   gap: 40px;
+  min-height: 90px;
+  align-items: center;
+  justify-content: center;
 }
 
 .control-btn {
@@ -233,6 +245,7 @@ body {
 
   .controls-group {
     gap: 20px;
+    min-height: 70px;
   }
 
   .picker-wheel {

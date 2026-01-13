@@ -106,41 +106,43 @@ function App() {
       </div>
 
       <div className="timer-section">
-        <AnimatePresence mode="wait">
-          {!isRunning && !isFinished ? (
-            <motion.div
-              key="picker"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              className="pickers-group"
-            >
-              <IOSPicker label="Hours" options={hourOptions} value={hours} onChange={setHours} />
-              <IOSPicker label="Minutes" options={minuteOptions} value={minutes} onChange={setMinutes} />
-              <IOSPicker label="Seconds" options={secondOptions} value={seconds} onChange={setSeconds} />
-            </motion.div>
-          ) : isFinished ? (
-            <motion.div
-              key="times-up"
-              initial={{ opacity: 0, scale: 1.1 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="countdown-display status-text"
-              style={{ color: '#ffffff' }}
-            >
-              TIMES UP!
-            </motion.div>
-          ) : (
-            <motion.div
-              key="countdown"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="countdown-display"
-            >
-              {formatTimeLeft(timeLeft)}
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <div className="display-area">
+          <AnimatePresence mode="wait">
+            {!isRunning && !isFinished ? (
+              <motion.div
+                key="picker"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                className="pickers-group"
+              >
+                <IOSPicker label="Hours" options={hourOptions} value={hours} onChange={setHours} />
+                <IOSPicker label="Minutes" options={minuteOptions} value={minutes} onChange={setMinutes} />
+                <IOSPicker label="Seconds" options={secondOptions} value={seconds} onChange={setSeconds} />
+              </motion.div>
+            ) : isFinished ? (
+              <motion.div
+                key="times-up"
+                initial={{ opacity: 0, scale: 1.1 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="countdown-display status-text"
+                style={{ color: '#ffffff' }}
+              >
+                TIMES UP!
+              </motion.div>
+            ) : (
+              <motion.div
+                key="countdown"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                className="countdown-display"
+              >
+                {formatTimeLeft(timeLeft)}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
 
         <div className="controls-group">
           {!isRunning && !isFinished ? (
