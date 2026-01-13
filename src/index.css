@@ -96,17 +96,21 @@ body {
   position: absolute;
   top: 40px;
   left: 40px;
-  font-size: 60px;
+  font-size: clamp(32px, 6vw, 60px);
   font-weight: 300;
   color: rgba(255, 255, 255, 0.8);
   letter-spacing: -0.02em;
+  z-index: 100;
 }
 
 .timer-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: clamp(30px, 8vh, 60px);
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .pickers-group {
@@ -116,11 +120,13 @@ body {
 }
 
 .countdown-display {
-  font-size: 240px;
+  font-size: clamp(80px, 22vw, 240px);
   font-weight: 200;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.05em;
   line-height: 1;
+  text-align: center;
+  width: 100%;
 }
 
 .controls-group {
@@ -189,4 +195,42 @@ body {
   color: #fff; 
   box-shadow: 0 0 20px rgba(52, 199, 89, 0.2), inset 0 0 15px rgba(52, 199, 89, 0.3);
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .current-time-display {
+    top: 20px;
+    left: 20px;
+  }
+
+  .pickers-group {
+    gap: 10px;
+  }
+
+  .control-btn {
+    width: 70px;
+    height: 70px;
+    font-size: 14px;
+  }
+
+  .controls-group {
+    gap: 20px;
+  }
+
+  .picker-wheel {
+    width: 70px;
+  }
+}
+
+@media (max-height: 600px) {
+  .timer-section {
+    gap: 20px;
+  }
+  
+  .current-time-display {
+    font-size: 24px;
+    top: 10px;
+    left: 10px;
+  }
 }
